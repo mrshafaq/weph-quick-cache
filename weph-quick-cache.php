@@ -3,7 +3,7 @@
  * Plugin Name: WePH Quick Cache
  * Plugin URI: https://mrshafaq.com/weph-quick-cache
  * Description: Complete performance optimization plugin with Gzip compression, CSS/JS/HTML minification, WebP conversion, Local Google Fonts, browser caching, and more for WordPress and Elementor websites.
- * Version: 1.4.1
+ * Version: 1.4.2
  * Author: MrShafaQ, Patrick Hofman
  * Author URI: https://mrshafaq.com
  * License: GPL v2 or later
@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('WEPH_QC_VERSION', '1.4.1');
+define('WEPH_QC_VERSION', '1.4.2');
 define('WEPH_QC_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WEPH_QC_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WEPH_QC_CACHE_DIR', WP_CONTENT_DIR . '/cache/weph-quick-cache/');
@@ -34,7 +34,7 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 // Initialize the update checker
 $wephQcUpdateChecker = PucFactory::buildUpdateChecker(
-    'https://github.com/mrshafaq/weph-quick-cache/', // TODO
+    'https://github.com/mrshafaq/weph-quick-cache/', // GitHub repository URL
     __FILE__,
     'weph-quick-cache'
 );
@@ -90,7 +90,8 @@ class WePH_Quick_Cache {
         add_action('admin_enqueue_scripts', array($this, 'admin_scripts'));
         
         // Performance optimization hooks
-        if (get_option('weph_qc_enable_gzip', 1)) {
+        // Only enable Gzip on frontend (not in admin)
+        if (!is_admin() && get_option('weph_qc_enable_gzip', 1)) {
             add_action('init', array($this, 'enable_gzip'));
         }
         
@@ -212,7 +213,7 @@ class WePH_Quick_Cache {
         add_option('weph_qc_enable_lazy_load', 1);
         add_option('weph_qc_enable_webp', 1);
         add_option('weph_qc_enable_local_fonts', 1);
-        add_option('weph_qc_minify_html', 1);
+        add_option('weph_qc_minify_html', 0);
         add_option('weph_qc_minify_css', 1);
         add_option('weph_qc_minify_js', 1);
         add_option('weph_qc_combine_css', 0);
@@ -265,6 +266,11 @@ class WePH_Quick_Cache {
      * Enable Gzip compression
      */
     public function enable_gzip() {
+        // Never run in admin area
+        if (is_admin()) {
+            return;
+        }
+        
         if (!headers_sent() && extension_loaded('zlib') && !ini_get('zlib.output_compression')) {
             if (strpos($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') !== false) {
                 ob_start('ob_gzhandler');

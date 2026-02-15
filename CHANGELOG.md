@@ -1,5 +1,25 @@
 # WePH Quick Cache - Changelog
 
+## Version 1.4.2 - February 15, 2026
+
+### 🚨 CRITICAL FIXES
+- **FIXED: Gzip Compression Breaking WordPress Admin** - Critical bug that prevented plugin installation and updates
+  - Gzip compression now only runs on frontend, not in WordPress admin area
+  - Fixed issue where users couldn't install other plugins when WePH Quick Cache was active
+  - Fixed issue where plugin couldn't be updated without deactivation
+  - Added double-safety checks to prevent admin interference
+  - Improved admin area performance and stability
+
+### ⚡ IMPROVEMENTS
+- Enhanced admin area compatibility
+- Better separation of frontend and backend optimizations
+- More reliable plugin update mechanism
+
+---
+
+## Version 1.4.1 - February 15, 2026
+- Fixed plugin update checker library structure
+
 ## Version 1.4.0 - February 15, 2026
 
 ### 🔴 CRITICAL FIXES
