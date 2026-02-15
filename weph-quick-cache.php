@@ -3,7 +3,7 @@
  * Plugin Name: WePH Quick Cache
  * Plugin URI: https://mrshafaq.com/weph-quick-cache
  * Description: Complete performance optimization plugin with Gzip compression, CSS/JS/HTML minification, WebP conversion, Local Google Fonts, browser caching, and more for WordPress and Elementor websites.
- * Version: 1.4.0
+ * Version: 1.4.1
  * Author: MrShafaQ, Patrick Hofman
  * Author URI: https://mrshafaq.com
  * License: GPL v2 or later
@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('WEPH_QC_VERSION', '1.4.0');
+define('WEPH_QC_VERSION', '1.4.1');
 define('WEPH_QC_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WEPH_QC_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WEPH_QC_CACHE_DIR', WP_CONTENT_DIR . '/cache/weph-quick-cache/');
