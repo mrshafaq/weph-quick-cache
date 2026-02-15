@@ -263,7 +263,8 @@ This plugin is licensed under the GPL v2 or later.
 ## Credits
 
 Developed by WePH Team
-
+https://weph.de
+https://mrshafaq.com
 ---
 
 **Note**: Always test the plugin on a staging site before deploying to production. While we've tested extensively, every WordPress site is unique and may react differently to optimization.
