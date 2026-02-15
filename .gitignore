@@ -1,0 +1,52 @@
+# WordPress
+.DS_Store
+Thumbs.db
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Node modules (if you use any build tools)
+node_modules/
+package-lock.json
+
+# Composer (if you use it)
+/vendor/
+composer.lock
+
+# Cache and logs
+*.log
+*.cache
+/cache/
+/logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+desktop.ini
+
+# Plugin specific
+/wp-content/
+/wp-admin/
+/wp-includes/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# ZIP files (don't commit your builds)
+*.zip
