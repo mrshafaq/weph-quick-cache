@@ -727,8 +727,8 @@ if (isset($_POST['weph_qc_save_settings'])) {
             <p>
                 <strong>WePH Quick Cache</strong> - Performance Optimization Plugin for WordPress & Elementor
                 <br>
-                Need help? <a href="https://example.com/support" target="_blank">Visit Support</a> | 
-                <a href="https://example.com/docs" target="_blank">Documentation</a>
+                Need help? <a href="https://mrshafaq.com/contact" target="_blank">Visit Support</a> | 
+                <a href="https://weph.de/kontakt" target="_blank">Contact</a>
             </p>
         </div>
     </div>
