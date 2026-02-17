@@ -227,9 +227,7 @@ If Elementor editor has problems:
 
 For support, feature requests, or bug reports:
 
-- Documentation: https://example.com/docs
-- Support Forum: https://example.com/support
-- Email: support@example.com
+- Email: support@mrshafaq.com
 
 ## Changelog
 
